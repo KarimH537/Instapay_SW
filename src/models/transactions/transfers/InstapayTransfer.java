@@ -1,1 +1,1 @@
-package src.models.transactions.transfers;
+package models.transactions.transfers;

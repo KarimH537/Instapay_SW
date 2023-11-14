@@ -1,1 +1,1 @@
-package src.controllers;
+package controllers;

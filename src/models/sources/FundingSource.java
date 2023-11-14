@@ -1,5 +1,2 @@
-package src.models.sources;
+package models.sources;
 
-interface FundingSource {
-    public TransferProvider getProvider();
-}

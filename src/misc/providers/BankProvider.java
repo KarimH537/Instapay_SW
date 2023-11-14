@@ -1,1 +1,1 @@
-package src.misc.providers;
+package misc.providers;

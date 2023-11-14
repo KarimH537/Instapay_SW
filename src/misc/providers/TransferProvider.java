@@ -1,1 +1,5 @@
-package src.misc.providers;
+package misc.providers;
+
+public class TransferProvider {
+
+}

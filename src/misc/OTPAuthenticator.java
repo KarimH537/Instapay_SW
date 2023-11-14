@@ -1,1 +1,1 @@
-package src.misc;
+package misc;

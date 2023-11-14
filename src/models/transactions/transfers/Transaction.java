@@ -1,4 +1,5 @@
-package src.models.transactions.transfers;
+package models.transactions.transfers;
+import java.util.Date;
 
 public abstract class Transaction {
     String srcUserName;

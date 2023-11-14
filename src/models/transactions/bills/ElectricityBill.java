@@ -1,1 +1,1 @@
-package src.models.transactions.bills;
+package models.transactions.bills;
