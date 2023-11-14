@@ -1,5 +1,6 @@
 package misc.providers;
 
-public class TransferProvider {
-
+interface TransferProvider {
+    Transaction transfer(String identifier, double amount, String senderUserName);
+    double getBalance(String identifier);
 }
