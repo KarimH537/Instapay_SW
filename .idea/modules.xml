@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Instapay_SW.iml" filepath="$PROJECT_DIR$/.idea/Instapay_SW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Instapay_SW.iml" filepath="$PROJECT_DIR$/Instapay_SW.iml" />
     </modules>
   </component>
 </project>

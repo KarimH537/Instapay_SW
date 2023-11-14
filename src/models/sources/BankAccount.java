@@ -1,3 +1,5 @@
+package src.models.sources;
+
 public class BankAccount implements FundingSource {
 
     @Override

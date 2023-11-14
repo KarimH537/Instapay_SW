@@ -1,3 +1,5 @@
+package src.models.sources;
+
 public class TeleWallet implements FundingSource {
 
     @Override

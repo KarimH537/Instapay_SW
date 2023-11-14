@@ -1,3 +1,5 @@
+package src.models.sources;
+
 public class EpayWallet implements FundingSource {
 
     @Override
