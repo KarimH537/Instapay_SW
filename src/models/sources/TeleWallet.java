@@ -6,7 +6,7 @@ import misc.providers.TransferProvider;
 public class TeleWallet implements FundingSource{
     private String phoneNumber;
 
-    public TeleWallet(String phoneNumber) {
+    public TeleWallet() {
         this.phoneNumber = phoneNumber;
     }
 

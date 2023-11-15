@@ -3,12 +3,8 @@ package models.sources;
 import misc.providers.BankProvider;
 import misc.providers.TransferProvider;
 
-class BankAccount implements FundingSource{
+public class BankAccount implements FundingSource{
     private String accountNumber;
-
-    public BankAccount(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
 
     public String getAccountNumber() {
         return accountNumber;

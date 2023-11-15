@@ -15,30 +15,30 @@ public class Database {
         userTransactions = new HashMap<>();
     }
 
-    public User getUser(String username){
+    public static User getUser(String username) {
         return instaPayAccounts.get(username);
     }
 
-    public boolean addUser(User user){
-        if(instaPayAccounts.containsKey(user.getUsername())){
+    public static boolean addUser(User user) {
+        if (instaPayAccounts.containsKey(user.getUsername())) {
+            System.out.println("User already exists.");
             return false;
-        }
-        else{
-            instaPayAccounts.put(user.getUsername(),user);
-            userTransactions.put(user.getUsername(),new ArrayList<>());
+        } else {
+            instaPayAccounts.put(user.getUsername(), user);
+            userTransactions.put(user.getUsername(), new ArrayList<>());
+            System.out.println("User created successfully.");
             return true;
         }
     }
 
-    public ArrayList<Transaction> getUserTransactions(String username){
+    public ArrayList<Transaction> getUserTransactions(String username) {
         return userTransactions.get(username);
     }
 
-    boolean addUserTransaction(String username,Transaction transaction){
-        if(!instaPayAccounts.containsKey(username)){
+    public static boolean addUserTransaction(String username, Transaction transaction) {
+        if (!instaPayAccounts.containsKey(username)) {
             return false;
-        }
-        else{
+        } else {
             userTransactions.get(username).add(transaction);
             return true;
         }

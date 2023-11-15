@@ -7,7 +7,7 @@ import misc.providers.TransferProvider;
 public class EpayWallet implements FundingSource{
     private String phoneNumber;
 
-    public EpayWallet(String phoneNumber) {
+    public EpayWallet() {
         this.phoneNumber = phoneNumber;
     }
 

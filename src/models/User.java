@@ -3,11 +3,13 @@ import models.sources.*;
 public class User {
     private String username;
     private String password;
+    private String phoneNumber;
     private FundingSource source;
 
-    public User(String username, String password, FundingSource source) {
+    public User(String username, String password, String phoneNumber, FundingSource source) {
         this.username = username;
         this.password = password;
+        this.phoneNumber = phoneNumber;
         this.source = source;
     }
 
