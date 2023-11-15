@@ -7,8 +7,12 @@ import misc.providers.TransferProvider;
 public class EpayWallet implements FundingSource{
     private String phoneNumber;
 
-    public EpayWallet() {
+    public EpayWallet(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public EpayWallet() {
+
     }
 
     public String getPhoneNumber() {
@@ -31,5 +35,10 @@ public class EpayWallet implements FundingSource{
         info += "Funding source : Epay Wallet";
         info += "Phone number : " + phoneNumber;
         return info;
+    }
+
+    @Override
+    public String getIdentifier() {
+        return phoneNumber;
     }
 }

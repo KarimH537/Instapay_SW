@@ -6,5 +6,7 @@ public interface FundingSource{
     TransferProvider getProvider();
     // TODO
     String getInfo();
+
+    String getIdentifier();
 }
 

@@ -1,10 +1,10 @@
 package misc.providers;
 
 
-import models.transactions.bills.Bill;
+import models.transactions.transfers.Transaction;
 
 public interface ServiceProvider {
 
     double getBillAmount(String eCode);
-    Bill payBill(String eCode);
+    Transaction payBill(String eCode,String userName);
 }

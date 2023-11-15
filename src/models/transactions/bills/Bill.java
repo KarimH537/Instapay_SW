@@ -1,13 +1,17 @@
 package models.transactions.bills;
 
 import misc.providers.ServiceProvider;
+import models.transactions.transfers.Transaction;
 
-public abstract class Bill {
+import java.util.Date;
+
+public abstract class Bill extends Transaction {
     private String eCode;
     private String month;
     private String company;
 
-    Bill(String eCode, String month, String company) {
+    Bill(String srcUserName, Date date, double amount,String eCode, String month, String company) {
+        super(srcUserName,date,amount);
         this.eCode = eCode;
         this.month = month;
         this.company = company;

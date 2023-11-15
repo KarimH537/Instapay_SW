@@ -3,6 +3,8 @@ package misc.providers;
 import models.transactions.bills.Bill;
 import models.transactions.bills.ElectricityBill;
 
+import java.util.Date;
+
 public class ElectricityProvider implements ServiceProvider {
 
     @Override
@@ -12,7 +14,7 @@ public class ElectricityProvider implements ServiceProvider {
     }
 
     @Override
-    public Bill payBill(String eCode) {
+    public Bill payBill(String eCode,String userName) {
         // Call API to pay the bill with this eCode
         // if payment failed return null
         // else
@@ -23,6 +25,7 @@ public class ElectricityProvider implements ServiceProvider {
         String company = "Electrico";
         // Call API to get the watt of this bill
         double watt = 1700;
-        return new ElectricityBill(eCode,month,company,watt);
+        return new ElectricityBill(userName,new Date(),getBillAmount(eCode),eCode,month,company,watt);
     }
+
 }

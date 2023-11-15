@@ -1,7 +1,10 @@
 package misc.providers;
 
 import models.transactions.bills.Bill;
+import models.transactions.bills.GasBill;
 import models.transactions.bills.WaterBill;
+
+import java.util.Date;
 
 public class WaterProvider implements ServiceProvider {
 
@@ -12,7 +15,7 @@ public class WaterProvider implements ServiceProvider {
     }
 
     @Override
-    public Bill payBill(String eCode) {
+    public Bill payBill(String eCode,String userName) {
         // Call API to pay the bill with this eCode
         // if payment failed return null
         // else
@@ -23,6 +26,6 @@ public class WaterProvider implements ServiceProvider {
         String company = "Watco";
         // Call API to get the liters of this bill
         double liters = 150;
-        return new WaterBill(eCode,month,company,liters);
+        return new WaterBill(userName,new Date(),getBillAmount(eCode),eCode,month,company,liters);
     }
 }

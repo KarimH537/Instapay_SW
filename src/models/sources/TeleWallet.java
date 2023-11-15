@@ -6,8 +6,12 @@ import misc.providers.TransferProvider;
 public class TeleWallet implements FundingSource{
     private String phoneNumber;
 
-    public TeleWallet() {
+    public TeleWallet(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public TeleWallet() {
+
     }
 
     public String getPhoneNumber() {
@@ -29,5 +33,10 @@ public class TeleWallet implements FundingSource{
         info += "Funding source : Tele Wallet";
         info += "Phone number : " + phoneNumber;
         return info;
+    }
+
+    @Override
+    public String getIdentifier() {
+        return phoneNumber;
     }
 }

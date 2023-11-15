@@ -15,6 +15,20 @@ public class BankProvider implements TransferProvider {
     }
 
     @Override
+    public boolean addAmount(String identifier, double amount) {
+        // Call API to add the amount to this identifier
+        // if successful return true otherwise false;
+        return true;
+    }
+
+    @Override
+    public boolean deductAmount(String identifier, double amount) {
+        // Call API to deduct the amount to this identifier
+        // if successful return true otherwise false;
+        return true;
+    }
+
+    @Override
     public Transaction transfer(String identifier, double amount, String senderUserName) {
         // Call API to transfer the amount to this identifier
         // if transfer failed return null

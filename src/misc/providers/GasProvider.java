@@ -1,7 +1,11 @@
 package misc.providers;
 
 import models.transactions.bills.Bill;
+import models.transactions.bills.ElectricityBill;
 import models.transactions.bills.GasBill;
+import models.transactions.transfers.Transaction;
+
+import java.util.Date;
 
 public class GasProvider implements ServiceProvider {
 
@@ -12,7 +16,7 @@ public class GasProvider implements ServiceProvider {
     }
 
     @Override
-    public Bill payBill(String eCode) {
+    public Transaction payBill(String eCode,String userName) {
         // Call API to pay the bill with this eCode
         // if payment failed return null
         // else
@@ -23,6 +27,6 @@ public class GasProvider implements ServiceProvider {
         String company = "Gasco";
         // Call API to get the cubic meters of this bill
         double cubicMeters = 70;
-        return new GasBill(eCode,month,company,cubicMeters);
+        return new GasBill(userName,new Date(),getBillAmount(eCode),eCode,month,company,cubicMeters);
     }
 }
