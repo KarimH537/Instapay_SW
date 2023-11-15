@@ -4,10 +4,10 @@ import misc.providers.ElectricityProvider;
 
 
 
-class ElectricityBill extends Bill{
+public class ElectricityBill extends Bill{
     private double watt;
 
-    ElectricityBill(String eCode, String month, String company,double watt) {
+    public ElectricityBill(String eCode, String month, String company,double watt) {
         super(eCode,month,company);
         this.watt = watt;
     }

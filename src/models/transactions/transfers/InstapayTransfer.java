@@ -5,8 +5,8 @@ import java.util.Date;
 class InstapayTransfer extends Transaction{
     private String destUserName;
 
-    public InstapayTransfer(String srcUserName, Date date, String id, double amount, String destUserName) {
-        super(srcUserName, date, id, amount);
+    public InstapayTransfer(String srcUserName, Date date, double amount, String destUserName) {
+        super(srcUserName, date, amount);
         this.destUserName = destUserName;
     }
 

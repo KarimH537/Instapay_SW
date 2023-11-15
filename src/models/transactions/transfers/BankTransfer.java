@@ -5,8 +5,8 @@ import java.util.Date;
 public class BankTransfer extends Transaction{
     private String destBankAccount;
 
-    public BankTransfer(String srcUserName, Date date, String id, double amount, String destBankAccount) {
-        super(srcUserName, date, id, amount);
+    public BankTransfer(String srcUserName, Date date, double amount, String destBankAccount) {
+        super(srcUserName, date, amount);
         this.destBankAccount = destBankAccount;
     }
 

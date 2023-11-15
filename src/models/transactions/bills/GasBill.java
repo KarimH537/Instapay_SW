@@ -2,10 +2,10 @@ package models.transactions.bills;
 import misc.providers.ServiceProvider;
 import misc.providers.GasProvider;
 
-class GasBill extends Bill{
+public class GasBill extends Bill{
     private double cubicMeters;
 
-    GasBill(String eCode, String month, String company,double cubicMeters) {
+    public GasBill(String eCode, String month, String company, double cubicMeters) {
         super(eCode,month,company);
         this.cubicMeters = cubicMeters;
     }

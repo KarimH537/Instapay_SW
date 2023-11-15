@@ -9,7 +9,7 @@ public abstract class Transaction {
     double amount;
 
 
-    public Transaction(String srcUserName, Date date, String id, double amount) {
+    public Transaction(String srcUserName, Date date, double amount) {
         this.srcUserName = srcUserName;
         this.date = date;
         this.id = idCounter++;

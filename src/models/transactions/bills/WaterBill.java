@@ -2,10 +2,10 @@ package models.transactions.bills;
 import misc.providers.ServiceProvider;
 import misc.providers.WaterProvider;
 
-class WaterBill extends Bill{
+public class WaterBill extends Bill{
     private double liters;
 
-    WaterBill(String eCode, String month, String company,double liters) {
+    public WaterBill(String eCode, String month, String company, double liters) {
         super(eCode,month,company);
         this.liters = liters;
     }

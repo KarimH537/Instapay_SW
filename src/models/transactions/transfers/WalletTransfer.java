@@ -6,8 +6,8 @@ public class WalletTransfer extends Transaction{
     private String destPhoneNumber;
     private String destProvider;
 
-    public WalletTransfer(String srcUserName, Date date, String id, double amount, String destPhoneNumber, String destProvider) {
-        super(srcUserName, date, id, amount);
+    public WalletTransfer(String srcUserName, Date date, double amount, String destPhoneNumber, String destProvider) {
+        super(srcUserName, date, amount);
         this.destPhoneNumber = destPhoneNumber;
         this.destProvider = destProvider;
     }
