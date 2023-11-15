@@ -25,7 +25,6 @@ public class Database {
         } else {
             instaPayAccounts.put(user.getUsername(), user);
             userTransactions.put(user.getUsername(), new ArrayList<>());
-            System.out.println("User created successfully.");
             return true;
         }
     }

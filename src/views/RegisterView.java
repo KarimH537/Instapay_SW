@@ -14,6 +14,7 @@ public class RegisterView {
     public static void showRegisterView() {
         System.out.println("1. Register using bank account\n2. Register using wallet\n3. Back\n4. Exit\n");
         int option = scanner.nextInt();
+        scanner.nextLine();
         switch (option) {
             case 1:
                 registerUser(new BankAccount());
@@ -31,6 +32,7 @@ public class RegisterView {
     private static void registerWalletUser() {
         System.out.println("1. Register using tele wallet\n2. Register using bank wallet\n3. Register using epay wallet\n4. Back\n");
         int option = scanner.nextInt();
+        scanner.nextLine();
         switch (option) {
             case 1:
                 registerUser(new TeleWallet());
@@ -69,39 +71,40 @@ public class RegisterView {
 
     private static boolean registerUser(FundingSource source) {
         //Prompt for input
-        System.out.print("Enter username: ");
+        System.out.print("Enter username:\n");
         String username = scanner.nextLine();
-        System.out.print("Enter password: ");
+
+        while (!isValidUsername(username)) {
+            System.out.println("Invalid username! Username should be at least 4 characters long.\n");
+            username = scanner.nextLine();
+        }
+
+        System.out.print("Enter password:\n");
         String password = scanner.nextLine();
-        System.out.print("Enter phone number: ");
+
+        while (!isValidPassword(password)) {
+            System.out.println("Invalid password! Password should be at least 8 characters long and contain 1 digit," +
+                    " 1 lowercase character, 1 uppercase character and a special character.\n");
+            password = scanner.nextLine();
+        }
+
+        System.out.print("Enter phone number:\n");
         String phoneNumber = scanner.nextLine();
 
-        //TODO valid phone
-        // Validate inputs
-        if (!isValidUsername(username)) {
-            System.out.println("Invalid username! Username should be at least 4 characters long.");
-        } else if (!isValidPassword(password)) {
-            System.out.println("Invalid password! Password should be at least 8 characters long and contain 1 digit," +
-                    " 1 lowercase character, 1 uppercase character and a special character.");
-        } else if (UserManager.registerUser(username, password, phoneNumber, source)) {
-            System.out.println("Successfully registered.");
-            return true;
-        }
-        System.out.println("Failed registering user.");
-        return false;
+        return UserManager.registerUser(username, password, phoneNumber, source);
     }
 
     public static boolean showLoginView() {
         //Prompt for input
-        System.out.print("Enter username: ");
+        System.out.print("Enter username:\n");
         String username = scanner.nextLine();
-        System.out.print("Enter password: ");
+        System.out.print("Enter password:\n");
         String password = scanner.nextLine();
         if (UserManager.loginUser(username, password)) {
-            System.out.println("Logged in successfully.");
+            System.out.println("Logged in successfully\n");
             return true;
         }
-        System.out.println("Failed login.");
+        System.out.println("Failed login\n");
         return false;
     }
 }

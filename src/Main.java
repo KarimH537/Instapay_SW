@@ -31,6 +31,7 @@ public class Main {
                 case 3:
                     System.exit(0);
                 default:
+                    System.out.println("Choose a valid option.\n");
             }
         } else {
             System.out.println("1. Transfer To Wallet\n2. Transfer to Instapay Account\n3. Transfer to Bank Account\n4. Check balance\n5. Pay Bill\n6. Logout\n7. Exit\n");
@@ -46,10 +47,10 @@ public class Main {
                     if (UserManager.getCurrentUser().getSource() instanceof BankAccount)
                         TranactionView.showBankView();
                     else
-                        System.out.println("Transferring to bank accounts is only valid for users registered using their bank account.");
+                        System.out.println("Transferring to bank accounts is only valid for users registered using their bank account.\n");
                     break;
                 case 4:
-                    TransactionManager.getBalance(UserManager.getCurrentUser());
+                    System.out.println(TransactionManager.getBalance(UserManager.getCurrentUser()));
                     break;
                 case 5:
                     TranactionView.showBillView();
@@ -60,7 +61,7 @@ public class Main {
                 case 7:
                     System.exit(0);
                 default:
-                    System.out.println("Choose a valid option.");
+                    System.out.println("Choose a valid option.\n");
             }
         }
     }
