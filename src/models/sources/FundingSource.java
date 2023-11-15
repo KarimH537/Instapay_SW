@@ -2,9 +2,9 @@ package models.sources;
 
 import misc.providers.TransferProvider;
 
-interface FundingSource{
-    public TransferProvider getProvider();
+public interface FundingSource{
+    TransferProvider getProvider();
     // TODO
-    public String getInfo();
+    String getInfo();
 }
 
