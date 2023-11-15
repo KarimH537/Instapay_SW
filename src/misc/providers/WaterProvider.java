@@ -1,5 +1,7 @@
 package misc.providers;
 
+import models.transactions.bills.Bill;
+
 public class WaterProvider implements ServiceProvider {
 
     @Override

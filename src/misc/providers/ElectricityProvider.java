@@ -1,5 +1,7 @@
 package misc.providers;
 
+import models.transactions.bills.Bill;
+
 public class ElectricityProvider implements ServiceProvider {
 
     @Override

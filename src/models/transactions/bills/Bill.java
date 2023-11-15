@@ -2,7 +2,7 @@ package models.transactions.bills;
 
 import misc.providers.ServiceProvider;
 
-abstract class Bill {
+public abstract class Bill {
     private String eCode;
     private String month;
     private String company;
