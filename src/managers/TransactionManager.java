@@ -64,7 +64,6 @@ public class TransactionManager {
             System.out.println("You have no bills to pay\n");
             return false;
         }
-
         if (getBalance(src) < amount) {
             System.out.println("Your balance isn't enough to pay the bill\n");
             return false;
@@ -74,8 +73,8 @@ public class TransactionManager {
             return false;
         }
         Transaction bill = provider.payBill(eCode, src.getUsername());
-        if(bill == null){
-            System.out.println("Transfer failed\n");
+        if(bill == null) {
+            System.out.println("Payment failed\n");
             src.getSource().getProvider().addAmount(src.getSource().getIdentifier(), amount);
             return false;
         }
