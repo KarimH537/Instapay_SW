@@ -1,6 +1,6 @@
 package misc.providers;
 
-interface ServiceProvider {
+public interface ServiceProvider {
 
     double getBillAmount(String eCode);
     Bill payBill(String eCode);

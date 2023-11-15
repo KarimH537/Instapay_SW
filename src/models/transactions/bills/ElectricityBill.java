@@ -1,4 +1,6 @@
 package models.transactions.bills;
+import misc.providers.ServiceProvider;
+import misc.providers.ElectricityProvider;
 
 
 
@@ -18,8 +20,8 @@ class ElectricityBill extends Bill{
         this.watt = watt;
     }
 
-//    public ServiceProvider getProvider(){
-//        return new ElectricityProvider();
-//    }
+    public ServiceProvider getProvider(){
+        return new ElectricityProvider();
+    }
 
 }

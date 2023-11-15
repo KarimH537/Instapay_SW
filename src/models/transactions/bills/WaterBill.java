@@ -1,4 +1,6 @@
 package models.transactions.bills;
+import misc.providers.ServiceProvider;
+import misc.providers.WaterProvider;
 
 class WaterBill extends Bill{
     private double liters;
@@ -16,8 +18,8 @@ class WaterBill extends Bill{
         this.liters = liters;
     }
 
-//    public ServiceProvider getProvider(){
-//        return new WaterProvider();
-//    }
+    public ServiceProvider getProvider(){
+        return new WaterProvider();
+    }
 
 }

@@ -1,4 +1,6 @@
 package models.transactions.bills;
+import misc.providers.ServiceProvider;
+import misc.providers.GasProvider;
 
 class GasBill extends Bill{
     private double cubicMeters;
@@ -16,8 +18,8 @@ class GasBill extends Bill{
         this.cubicMeters = cubicMeters;
     }
 
-//    public ServiceProvider getProvider(){
-//        return new GasProvider();
-//    }
+    public ServiceProvider getProvider(){
+        return new GasProvider();
+    }
 
 }

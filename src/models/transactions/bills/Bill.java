@@ -1,6 +1,6 @@
 package models.transactions.bills;
 
-//import misc.providers.ServiceProvider;
+import misc.providers.ServiceProvider;
 
 abstract class Bill {
     private String eCode;
@@ -38,5 +38,5 @@ abstract class Bill {
     }
 
 
-//    abstract public ServiceProvider getProvider();
+    abstract public ServiceProvider getProvider();
 }
