@@ -36,8 +36,8 @@ public class WalletTransfer extends Transaction{
     @Override
     public String getExtraInfo() {
         String info = new String();
-        info += "Destination phone number : " + destPhoneNumber;
-        info += "Destination provider : " + destProvider;
+        info += "Destination phone number : " + destPhoneNumber + "\n";
+        info += "Destination provider : " + destProvider + "\n";
         return info;
     }
 }

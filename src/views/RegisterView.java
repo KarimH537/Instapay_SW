@@ -1,6 +1,7 @@
 package views;
 
 import managers.UserManager;
+import misc.Database;
 import models.sources.*;
 
 import java.util.Scanner;
@@ -79,6 +80,7 @@ public class RegisterView {
             username = scanner.nextLine();
         }
 
+
         System.out.print("Enter password:\n");
         String password = scanner.nextLine();
 
@@ -104,7 +106,6 @@ public class RegisterView {
             System.out.println("Logged in successfully\n");
             return true;
         }
-        System.out.println("Failed login\n");
         return false;
     }
 }

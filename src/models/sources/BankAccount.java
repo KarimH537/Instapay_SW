@@ -3,7 +3,7 @@ package models.sources;
 import misc.providers.transfers.BankProvider;
 import misc.providers.transfers.TransferProvider;
 
-public class BankAccount implements FundingSource{
+public class BankAccount implements FundingSource {
     private String accountNumber;
 
     public BankAccount(String accountNumber) {
@@ -31,8 +31,8 @@ public class BankAccount implements FundingSource{
     @Override
     public String getInfo() {
         String info = new String();
-        info += "Funding source : Bank account";
-        info += "Account number : " + accountNumber;
+        info += "Funding source : Bank account" + "\n";
+        info += "Account number : " + accountNumber + "\n";
         return info;
     }
 

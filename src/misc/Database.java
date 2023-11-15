@@ -29,7 +29,7 @@ public class Database {
         }
     }
 
-    public ArrayList<Transaction> getUserTransactions(String username) {
+    public static ArrayList<Transaction> getUserTransactions(String username) {
         return userTransactions.get(username);
     }
 

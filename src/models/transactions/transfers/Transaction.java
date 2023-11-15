@@ -51,12 +51,12 @@ public abstract class Transaction {
     public String getInfo(){
         // headLine of Transaction
         String info = new String();
-        info += getTransactionType();
-        info += "Source user name : " + srcUserName;
-        info += "Date : " + date;
-        info += "Transaction id : " + id;
-        info += "amount : " + amount;
-        info += getExtraInfo();
+        info += getTransactionType() + "\n";
+        info += "Source user name : " + srcUserName + "\n";;
+        info += "Date : " + date + "\n";;
+        info += "Transaction id : " + id + "\n";;
+        info += "amount : " + amount + "\n";;
+        info += getExtraInfo() + "\n";
         return info;
     }
 

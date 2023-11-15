@@ -26,8 +26,15 @@ public class UserManager {
 
     public static boolean loginUser(String username, String password) {
         User user = Database.getUser(username);
-        if (user == null || !user.getPassword().equals(password))
+        if(user == null){
+            System.out.println("This user does not exist");
             return false;
+        }
+
+        if (!user.getPassword().equals(password)){
+            System.out.println("Wrong password");
+            return false;
+        }
         currentUser = user;
         return true;
     }

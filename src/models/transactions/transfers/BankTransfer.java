@@ -26,7 +26,7 @@ public class BankTransfer extends Transaction{
     @Override
     public String getExtraInfo() {
         String info = new String();
-        info += "Destination bank account : " + destBankAccount;
+        info += "Destination bank account : " + destBankAccount + "\n";
         return info;
     }
 }

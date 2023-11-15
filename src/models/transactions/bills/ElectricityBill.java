@@ -33,10 +33,10 @@ public class ElectricityBill extends Bill{
     @Override
     public String getExtraInfo() {
         String info = new String();
-        info += "Ecode : " + geteCode();
-        info += "Month : " + getMonth();
-        info += "Company : " + getCompany();
-        info += "Watt : " + watt;
+        info += "Ecode : " + geteCode() + "\n";
+        info += "Month : " + getMonth() + "\n";
+        info += "Company : " + getCompany() + "\n";
+        info += "Watt : " + watt + "\n";
         return info;
     }
 }

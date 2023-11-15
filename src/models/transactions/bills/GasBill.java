@@ -32,10 +32,10 @@ public class GasBill extends Bill{
     @Override
     public String getExtraInfo() {
         String info = new String();
-        info += "Ecode : " + geteCode();
-        info += "Month : " + getMonth();
-        info += "Company : " + getCompany();
-        info += "Cubic meters : " + cubicMeters;
+        info += "Ecode : " + geteCode() + "\n";
+        info += "Month : " + getMonth() + "\n";
+        info += "Company : " + getCompany() + "\n";
+        info += "Cubic meters : " + cubicMeters + "\n";
         return info;
     }
 }

@@ -26,7 +26,7 @@ class InstapayTransfer extends Transaction{
     @Override
     public String getExtraInfo() {
         String info = new String();
-        info += "Destination username : " + destUserName;
+        info += "Destination username : " + destUserName + "\n";
         return info;
     }
 }

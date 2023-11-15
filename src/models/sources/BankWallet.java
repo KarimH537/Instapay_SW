@@ -30,8 +30,8 @@ public class BankWallet implements FundingSource{
     @Override
     public String getInfo() {
         String info = new String();
-        info += "Funding source : Bank Wallet";
-        info += "Phone number : " + phoneNumber;
+        info += "Funding source : Bank Wallet" + "\n";
+        info += "Phone number : " + phoneNumber + "\n";
         return info;
     }
 

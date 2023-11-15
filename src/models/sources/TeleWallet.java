@@ -30,8 +30,8 @@ public class TeleWallet implements FundingSource{
     @Override
     public String getInfo() {
         String info = new String();
-        info += "Funding source : Tele Wallet";
-        info += "Phone number : " + phoneNumber;
+        info += "Funding source : Tele Wallet" + "\n";
+        info += "Phone number : " + phoneNumber + "\n";
         return info;
     }
 

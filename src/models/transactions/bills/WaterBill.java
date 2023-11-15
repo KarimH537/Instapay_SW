@@ -32,10 +32,10 @@ public class WaterBill extends Bill{
     @Override
     public String getExtraInfo() {
         String info = new String();
-        info += "Ecode : " + geteCode();
-        info += "Month : " + getMonth();
-        info += "Company : " + getCompany();
-        info += "Liters : " + liters;
+        info += "Ecode : " + geteCode() + "\n";
+        info += "Month : " + getMonth() + "\n";
+        info += "Company : " + getCompany() + "\n";
+        info += "Liters : " + liters + "\n";
         return info;
     }
 }

@@ -40,6 +40,10 @@ public class TranactionView {
         String identifier = sc.nextLine();
         System.out.print("Enter amount:\n");
         double amount = sc.nextDouble();
+        while (amount <= 0){
+            System.out.print("The amount to transfer must be positive enter amount:\n");
+            amount = sc.nextDouble();
+        }
         sc.nextLine();
         TransactionManager.transferToSource(UserManager.getCurrentUser(), identifier, amount, provider);
     }
@@ -49,6 +53,10 @@ public class TranactionView {
         String identifier = sc.nextLine();
         System.out.print("Enter amount:\n");
         double amount = sc.nextDouble();
+        while (amount <= 0){
+            System.out.print("The amount to transfer must be positive enter amount:\n");
+            amount = sc.nextDouble();
+        }
         sc.nextLine();
         TransactionManager.transferToUser(UserManager.getCurrentUser(), identifier, amount);
     }
@@ -58,6 +66,10 @@ public class TranactionView {
         String identifier = sc.nextLine();
         System.out.print("Enter amount:\n");
         double amount = sc.nextDouble();
+        while (amount <= 0){
+            System.out.print("The amount to transfer must be positive enter amount:\n");
+            amount = sc.nextDouble();
+        }
         sc.nextLine();
         TransactionManager.transferToSource(UserManager.getCurrentUser(), identifier, amount, new BankProvider());
     }
