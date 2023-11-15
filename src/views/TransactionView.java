@@ -2,15 +2,19 @@ package views;
 
 import managers.TransactionManager;
 import managers.UserManager;
+import misc.Database;
 import misc.providers.services.ElectricityProvider;
 import misc.providers.services.GasProvider;
 import misc.providers.services.ServiceProvider;
 import misc.providers.services.WaterProvider;
 import misc.providers.transfers.*;
+import models.User;
+import models.transactions.transfers.Transaction;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TranactionView {
+public class TransactionView {
 
     private static Scanner sc = new Scanner(System.in);
 
@@ -40,7 +44,7 @@ public class TranactionView {
         String identifier = sc.nextLine();
         System.out.print("Enter amount:\n");
         double amount = sc.nextDouble();
-        while (amount <= 0){
+        while (amount <= 0) {
             System.out.print("The amount to transfer must be positive enter amount:\n");
             amount = sc.nextDouble();
         }
@@ -53,7 +57,7 @@ public class TranactionView {
         String identifier = sc.nextLine();
         System.out.print("Enter amount:\n");
         double amount = sc.nextDouble();
-        while (amount <= 0){
+        while (amount <= 0) {
             System.out.print("The amount to transfer must be positive enter amount:\n");
             amount = sc.nextDouble();
         }
@@ -66,7 +70,7 @@ public class TranactionView {
         String identifier = sc.nextLine();
         System.out.print("Enter amount:\n");
         double amount = sc.nextDouble();
-        while (amount <= 0){
+        while (amount <= 0) {
             System.out.print("The amount to transfer must be positive enter amount:\n");
             amount = sc.nextDouble();
         }
@@ -99,5 +103,19 @@ public class TranactionView {
         System.out.print("Enter ECode of bill to pay:\n");
         String eCode = sc.nextLine();
         TransactionManager.payBill(UserManager.getCurrentUser(), eCode, provider);
+    }
+
+    public static void printUserTransactions(String userName) {
+        ArrayList<Transaction> transactions = Database.getUserTransactions(userName);
+        System.out.println("Your transaction history\n");
+        for (Transaction transaction : transactions) {
+            transaction.getInfo();
+        }
+    }
+
+    public static void printUserProfile(User user) {
+        System.out.println("Username : " + user.getUsername());
+        System.out.println("Phone number : " + user.getPhoneNumber());
+        System.out.println(user.getSource().getInfo());
     }
 }

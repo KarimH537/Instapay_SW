@@ -2,11 +2,9 @@ import managers.TransactionManager;
 import managers.UserManager;
 import misc.Database;
 import models.sources.BankAccount;
-import models.transactions.transfers.Transaction;
 import views.RegisterView;
-import views.TranactionView;
+import views.TransactionView;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -36,18 +34,18 @@ public class Main {
                     System.out.println("Choose a valid option.\n");
             }
         } else {
-            System.out.println("1. Transfer To Wallet\n2. Transfer to Instapay Account\n3. Transfer to Bank Account\n4. Check balance\n5. Pay Bill\n6. Get transaction history\n7. Logout\n8. Exit\n");
+            System.out.println("1. Transfer To Wallet\n2. Transfer to Instapay Account\n3. Transfer to Bank Account\n4. Check balance\n5. Pay Bill\n6. Get transaction history\n7. View your profile\n8. Logout\n9. Exit\n");
             int option = sc.nextInt();
             switch (option) {
                 case 1:
-                    TranactionView.showWalletView();
+                    TransactionView.showWalletView();
                     break;
                 case 2:
-                    TranactionView.showAccountView();
+                    TransactionView.showAccountView();
                     break;
                 case 3:
                     if (UserManager.getCurrentUser().getSource() instanceof BankAccount)
-                        TranactionView.showBankView();
+                        TransactionView.showBankView();
                     else
                         System.out.println("Transferring to bank accounts is only valid for users registered using their bank account.\n");
                     break;
@@ -55,20 +53,20 @@ public class Main {
                     System.out.println("Balance : " + TransactionManager.getBalance(UserManager.getCurrentUser()));
                     break;
                 case 5:
-                    TranactionView.showBillView();
+                    TransactionView.showBillView();
                     break;
                 case 6:
-                    // get trans history
-                    ArrayList<Transaction>transactions = Database.getUserTransactions(UserManager.getCurrentUser().getUsername());
-                    for(Transaction transaction : transactions){
-                        System.out.println(transaction.getInfo());
-                    }
+                    TransactionView.printUserTransactions(UserManager.getCurrentUser().getUsername());
                     break;
                 case 7:
-                    UserManager.logout();
+                    TransactionView.printUserProfile(UserManager.getCurrentUser());
                     break;
                 case 8:
+                    UserManager.logout();
+                    break;
+                case 9:
                     System.exit(0);
+                    break;
 
                 default:
                     System.out.println("Choose a valid option.\n");
