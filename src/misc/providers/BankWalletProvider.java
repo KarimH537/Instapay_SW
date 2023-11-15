@@ -1,5 +1,7 @@
 package misc.providers;
 
+import models.transactions.transfers.Transaction;
+
 public class BankWalletProvider implements TransferProvider {
 
     @Override

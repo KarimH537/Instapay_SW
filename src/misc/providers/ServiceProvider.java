@@ -1,6 +1,8 @@
 package misc.providers;
 
-interface ServiceProvider {
+import models.transactions.bills.Bill;
+
+public interface ServiceProvider {
 
     double getBillAmount(String eCode);
     Bill payBill(String eCode);
