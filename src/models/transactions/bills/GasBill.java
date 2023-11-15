@@ -26,7 +26,7 @@ public class GasBill extends Bill{
 
     @Override
     public String getTransactionType() {
-        return "Gas Bill";
+        return "Gas Bill Payment";
     }
 
     @Override

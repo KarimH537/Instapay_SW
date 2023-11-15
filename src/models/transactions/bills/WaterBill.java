@@ -26,7 +26,7 @@ public class WaterBill extends Bill{
 
     @Override
     public String getTransactionType() {
-        return "Water Bill";
+        return "Water Bill Payment";
     }
 
     @Override

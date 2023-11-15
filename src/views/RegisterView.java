@@ -35,6 +35,11 @@ public class RegisterView {
         System.out.print("Enter phone number:\n");
         String phoneNumber = scanner.nextLine();
 
+        while (!isValidPhone(phoneNumber)) {
+            System.out.println("Phone number must be 10 digits.\n");
+            phoneNumber = scanner.nextLine();
+        }
+
         System.out.println("1. Register using bank account\n2. Register using tele wallet\n3. Register using bank wallet\n" +
                 "4. Register using epay wallet\n5. Back\n");
         int option = scanner.nextInt();
@@ -64,7 +69,6 @@ public class RegisterView {
 
     // Validate username (at least 4 characters)
     private static boolean isValidUsername(String username) {
-
         return username.length() >= 4;
     }
 
@@ -72,11 +76,17 @@ public class RegisterView {
     // 8 characters + 1 digit + lowercase char + uppercase char + one special character
     private static final String PASSWORD_PATTERN =
             "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$";
+    private static final Pattern PASS_PATTERN = Pattern.compile(PASSWORD_PATTERN);
 
-    private static final Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+    private static final Pattern PHONE_PATTERN = Pattern.compile("^\\d{10}$");
 
     public static boolean isValidPassword(final String password) {
-        Matcher matcher = pattern.matcher(password);
+        Matcher matcher = PASS_PATTERN.matcher(password);
+        return matcher.matches();
+    }
+
+    public static boolean isValidPhone(final String phone) {
+        Matcher matcher = PHONE_PATTERN.matcher(phone);
         return matcher.matches();
     }
 

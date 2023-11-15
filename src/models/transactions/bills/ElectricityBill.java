@@ -27,7 +27,7 @@ public class ElectricityBill extends Bill{
 
     @Override
     public String getTransactionType() {
-        return null;
+        return "Electricity Bill Payment";
     }
 
     @Override

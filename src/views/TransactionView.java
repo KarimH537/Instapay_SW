@@ -108,8 +108,9 @@ public class TransactionView {
     public static void printUserTransactions(String userName) {
         ArrayList<Transaction> transactions = Database.getUserTransactions(userName);
         System.out.println("Your transaction history\n");
+        int counter = 1;
         for (Transaction transaction : transactions) {
-            transaction.getInfo();
+            System.out.println(counter++ + ". " + transaction.getInfo());
         }
     }
 
