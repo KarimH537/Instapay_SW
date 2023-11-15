@@ -34,7 +34,7 @@ public class UserView {
         System.out.print("Enter phone number:\n");
         String phoneNumber = scanner.nextLine();
 
-        while (!isValidPhone(phoneNumber)) {
+        while (!isValidPhoneNumber(phoneNumber)) {
             System.out.println("Phone number must be 10 digits! Re-enter the phone number:\n");
             phoneNumber = scanner.nextLine();
         }
@@ -84,7 +84,7 @@ public class UserView {
         return matcher.matches();
     }
 
-    public static boolean isValidPhone(final String phone) {
+    public static boolean isValidPhoneNumber(final String phone) {
         Matcher matcher = PHONE_PATTERN.matcher(phone);
         return matcher.matches();
     }
