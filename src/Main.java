@@ -1,8 +1,6 @@
-import managers.TransactionManager;
 import managers.UserManager;
 import misc.Database;
-import models.sources.BankAccount;
-import views.RegisterView;
+import views.UserView;
 import views.TransactionView;
 
 import java.util.Scanner;
@@ -23,10 +21,10 @@ public class Main {
             int option = sc.nextInt();
             switch (option) {
                 case 1:
-                    RegisterView.showRegisterView();
+                    UserView.showRegisterView();
                     break;
                 case 2:
-                    RegisterView.showLoginView();
+                    UserView.showLoginView();
                     break;
                 case 3:
                     System.exit(0);
@@ -44,25 +42,22 @@ public class Main {
                     TransactionView.showAccountView();
                     break;
                 case 3:
-                    if (UserManager.getCurrentUser().getSource() instanceof BankAccount)
-                        TransactionView.showBankView();
-                    else
-                        System.out.println("Transferring to bank accounts is only valid for users registered using their bank account.\n");
+                    TransactionView.showBankView();
                     break;
                 case 4:
-                    System.out.println("Balance : " + TransactionManager.getBalance(UserManager.getCurrentUser()));
+                    TransactionView.showBalance();
                     break;
                 case 5:
                     TransactionView.showBillView();
                     break;
                 case 6:
-                    TransactionView.printUserTransactions(UserManager.getCurrentUser().getUsername());
+                    TransactionView.printUserTransactions();
                     break;
                 case 7:
-                    TransactionView.printUserProfile(UserManager.getCurrentUser());
+                    TransactionView.printUserProfile();
                     break;
                 case 8:
-                    UserManager.logout();
+                    UserView.showLogoutMenu();
                     break;
                 case 9:
                     System.exit(0);
