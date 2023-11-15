@@ -1,14 +1,13 @@
 package views;
 
 import managers.UserManager;
-import misc.Database;
 import models.sources.*;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegisterView {
+public class UserView {
 
     private static Scanner scanner = new Scanner(System.in);
 
@@ -36,7 +35,7 @@ public class RegisterView {
         String phoneNumber = scanner.nextLine();
 
         while (!isValidPhone(phoneNumber)) {
-            System.out.println("Phone number must be 10 digits.\n");
+            System.out.println("Phone number must be 10 digits! Re-enter the phone number:\n");
             phoneNumber = scanner.nextLine();
         }
 
@@ -101,5 +100,9 @@ public class RegisterView {
             return true;
         }
         return false;
+    }
+
+    public static void showLogoutMenu() {
+        UserManager.logout();
     }
 }

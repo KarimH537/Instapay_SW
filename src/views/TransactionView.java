@@ -9,6 +9,7 @@ import misc.providers.services.ServiceProvider;
 import misc.providers.services.WaterProvider;
 import misc.providers.transfers.*;
 import models.User;
+import models.sources.BankAccount;
 import models.transactions.transfers.Transaction;
 
 import java.util.ArrayList;
@@ -66,6 +67,10 @@ public class TransactionView {
     }
 
     public static void showBankView() {
+        if (!(UserManager.getCurrentUser().getSource() instanceof BankAccount)) {
+            System.out.println("Transferring to bank accounts is only valid for users registered using their bank account.\n");
+            return;
+        }
         System.out.print("Enter IBAN to transfer to:\n");
         String identifier = sc.nextLine();
         System.out.print("Enter amount:\n");
@@ -105,7 +110,8 @@ public class TransactionView {
         TransactionManager.payBill(UserManager.getCurrentUser(), eCode, provider);
     }
 
-    public static void printUserTransactions(String userName) {
+    public static void printUserTransactions() {
+        String userName = UserManager.getCurrentUser().getUsername();
         ArrayList<Transaction> transactions = Database.getUserTransactions(userName);
         System.out.println("Your transaction history\n");
         int counter = 1;
@@ -114,9 +120,14 @@ public class TransactionView {
         }
     }
 
-    public static void printUserProfile(User user) {
+    public static void printUserProfile() {
+        User user = UserManager.getCurrentUser();
         System.out.println("Username : " + user.getUsername());
         System.out.println("Phone number : " + user.getPhoneNumber());
         System.out.println(user.getSource().getInfo());
+    }
+
+    public static void showBalance() {
+        System.out.println("Balance : " + TransactionManager.getBalance(UserManager.getCurrentUser()));
     }
 }
