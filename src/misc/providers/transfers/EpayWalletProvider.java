@@ -1,17 +1,16 @@
-package misc.providers;
+package misc.providers.transfers;
 
-import models.transactions.transfers.BankTransfer;
 import models.transactions.transfers.Transaction;
-
+import models.transactions.transfers.WalletTransfer;
 
 import java.util.Date;
 
-public class BankProvider implements TransferProvider {
+public class EpayWalletProvider implements TransferProvider {
 
     @Override
     public double getBalance(String identifier) {
         // Call API to get the balance of this identifier
-        return 50000;
+        return 9000;
     }
 
     @Override
@@ -36,7 +35,10 @@ public class BankProvider implements TransferProvider {
 
         Date date = new Date();
 
-        return new BankTransfer(senderUserName,date,amount,identifier);
+        // Call API to get the name of the destination provider
+        String destProvider = "Fawry";
+
+        return new WalletTransfer(senderUserName,date,amount,identifier,destProvider);
     }
 
 }

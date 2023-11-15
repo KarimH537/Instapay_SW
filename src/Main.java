@@ -1,5 +1,5 @@
-import controllers.TransactionManager;
-import controllers.UserManager;
+import managers.TransactionManager;
+import managers.UserManager;
 import misc.Database;
 import models.sources.BankAccount;
 import views.RegisterView;

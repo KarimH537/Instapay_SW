@@ -1,8 +1,8 @@
-package controllers;
+package managers;
 
 import misc.Database;
-import misc.providers.ServiceProvider;
-import misc.providers.TransferProvider;
+import misc.providers.services.ServiceProvider;
+import misc.providers.transfers.TransferProvider;
 import models.User;
 import models.transactions.transfers.Transaction;
 

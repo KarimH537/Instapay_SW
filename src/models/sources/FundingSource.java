@@ -1,6 +1,6 @@
 package models.sources;
 
-import misc.providers.TransferProvider;
+import misc.providers.transfers.TransferProvider;
 
 public interface FundingSource{
     TransferProvider getProvider();

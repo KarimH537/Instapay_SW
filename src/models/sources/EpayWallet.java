@@ -1,8 +1,8 @@
 package models.sources;
 
 
-import misc.providers.EpayWalletProvider;
-import misc.providers.TransferProvider;
+import misc.providers.transfers.EpayWalletProvider;
+import misc.providers.transfers.TransferProvider;
 
 public class EpayWallet implements FundingSource{
     private String phoneNumber;

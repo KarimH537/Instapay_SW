@@ -1,7 +1,6 @@
-package misc.providers;
+package misc.providers.services;
 
 import models.transactions.bills.Bill;
-import models.transactions.bills.GasBill;
 import models.transactions.bills.WaterBill;
 
 import java.util.Date;

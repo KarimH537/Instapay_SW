@@ -1,7 +1,7 @@
 package models.sources;
 
-import misc.providers.BankWalletProvider;
-import misc.providers.TransferProvider;
+import misc.providers.transfers.BankWalletProvider;
+import misc.providers.transfers.TransferProvider;
 
 public class BankWallet implements FundingSource{
     private String phoneNumber;

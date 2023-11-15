@@ -1,8 +1,9 @@
 package views;
 
-import controllers.TransactionManager;
-import controllers.UserManager;
-import misc.providers.*;
+import managers.TransactionManager;
+import managers.UserManager;
+import misc.providers.services.ServiceProvider;
+import misc.providers.transfers.*;
 
 import java.util.Scanner;
 

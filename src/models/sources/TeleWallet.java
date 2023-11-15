@@ -1,7 +1,7 @@
 package models.sources;
 
-import misc.providers.TeleWalletProvider;
-import misc.providers.TransferProvider;
+import misc.providers.transfers.TeleWalletProvider;
+import misc.providers.transfers.TransferProvider;
 
 public class TeleWallet implements FundingSource{
     private String phoneNumber;

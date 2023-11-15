@@ -1,4 +1,4 @@
-package misc.providers;
+package misc.providers.transfers;
 
 import models.transactions.transfers.Transaction;
 

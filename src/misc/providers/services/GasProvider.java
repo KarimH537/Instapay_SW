@@ -1,7 +1,5 @@
-package misc.providers;
+package misc.providers.services;
 
-import models.transactions.bills.Bill;
-import models.transactions.bills.ElectricityBill;
 import models.transactions.bills.GasBill;
 import models.transactions.transfers.Transaction;
 

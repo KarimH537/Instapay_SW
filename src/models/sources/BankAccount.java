@@ -1,7 +1,7 @@
 package models.sources;
 
-import misc.providers.BankProvider;
-import misc.providers.TransferProvider;
+import misc.providers.transfers.BankProvider;
+import misc.providers.transfers.TransferProvider;
 
 public class BankAccount implements FundingSource{
     private String accountNumber;

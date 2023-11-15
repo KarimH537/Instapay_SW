@@ -1,6 +1,6 @@
 package views;
 
-import controllers.UserManager;
+import managers.UserManager;
 import models.sources.*;
 
 import java.util.Scanner;

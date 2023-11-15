@@ -1,4 +1,4 @@
-package controllers;
+package managers;
 
 import misc.Database;
 import misc.OTPAuthenticator;
