@@ -1,8 +1,6 @@
 package views;
 
-import controllers.UserController;
-import misc.Database;
-import models.User;
+import controllers.UserManager;
 import models.sources.*;
 
 import java.util.Scanner;
@@ -13,7 +11,7 @@ public class RegisterView {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void registerUser() {
+    public static void showRegisterView() {
         System.out.println("1. Register using bank account\n2. Register using wallet\n3. Back\n4. Exit\n");
         int option = scanner.nextInt();
         switch (option) {
@@ -30,7 +28,7 @@ public class RegisterView {
         }
     }
 
-    public static void registerWalletUser() {
+    private static void registerWalletUser() {
         System.out.println("1. Register using tele wallet\n2. Register using bank wallet\n3. Register using epay wallet\n4. Back\n");
         int option = scanner.nextInt();
         switch (option) {
@@ -69,7 +67,7 @@ public class RegisterView {
         return matcher.matches();
     }
 
-    public static boolean registerUser(FundingSource source) {
+    private static boolean registerUser(FundingSource source) {
         //Prompt for input
         System.out.print("Enter username: ");
         String username = scanner.nextLine();
@@ -85,21 +83,25 @@ public class RegisterView {
         } else if (!isValidPassword(password)) {
             System.out.println("Invalid password! Password should be at least 8 characters long and contain 1 digit," +
                     " 1 lowercase character, 1 uppercase character and a special character.");
-        } else {
-            return UserController.registerUser(username, password, phoneNumber, source);
+        } else if (UserManager.registerUser(username, password, phoneNumber, source)) {
+            System.out.println("Successfully registered.");
+            return true;
         }
+        System.out.println("Failed registering user.");
         return false;
     }
 
-    public static boolean handleLogin() {
+    public static boolean showLoginView() {
         //Prompt for input
         System.out.print("Enter username: ");
         String username = scanner.nextLine();
         System.out.print("Enter password: ");
         String password = scanner.nextLine();
-
-        User user = Database.getUser(username);
-//        if ()
+        if (UserManager.loginUser(username, password)) {
+            System.out.println("Logged in successfully.");
+            return true;
+        }
+        System.out.println("Failed login.");
         return false;
     }
 }

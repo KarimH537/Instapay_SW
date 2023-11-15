@@ -5,11 +5,7 @@ import misc.OTPAuthenticator;
 import models.User;
 import models.sources.FundingSource;
 
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-public class UserController {
+public class UserManager {
 
     private static User currentUser;
 
@@ -22,8 +18,11 @@ public class UserController {
     }
 
     public static boolean loginUser(String username, String password) {
-        //TODO
-        return false;
+        User user = Database.getUser(username);
+        if (user == null || !user.getPassword().equals(password))
+            return false;
+        currentUser = user;
+        return true;
     }
 
     public static void logout() {

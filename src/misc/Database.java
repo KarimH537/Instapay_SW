@@ -21,7 +21,6 @@ public class Database {
 
     public static boolean addUser(User user) {
         if (instaPayAccounts.containsKey(user.getUsername())) {
-            System.out.println("User already exists.");
             return false;
         } else {
             instaPayAccounts.put(user.getUsername(), user);

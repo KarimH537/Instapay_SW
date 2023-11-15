@@ -4,12 +4,9 @@ import misc.Database;
 import misc.providers.ServiceProvider;
 import misc.providers.TransferProvider;
 import models.User;
-import models.transactions.bills.Bill;
 import models.transactions.transfers.Transaction;
 
-import java.security.Provider;
-
-public class TransactionController {
+public class TransactionManager {
 
     public static double getBalance(User user) {
         return user.getSource().getProvider().getBalance(user.getSource().getIdentifier());
